@@ -13,7 +13,6 @@ namespace Positron.Inject
 
         public abstract void Configure();
 
-
         public OngoingBinding<T> Bind<T>()
         {
             return new OngoingBinding<T>
