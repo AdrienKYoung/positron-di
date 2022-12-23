@@ -13,7 +13,6 @@ namespace Positron.Inject
 
         public abstract void Configure();
 
-
         public OngoingBinding<T> Bind<T>()
         {
             return new OngoingBinding<T>
@@ -61,7 +60,7 @@ namespace Positron.Inject
 
         public OngoingBinding<T> To(Type resolution)
         {
-            Binding = new TypedBinding(resolution, resolution);
+            Binding = new TypedBinding(typeof(T), resolution);
             return this;
         }
 
