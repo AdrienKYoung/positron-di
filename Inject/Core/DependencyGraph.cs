@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Positron.Inject.Core
 {
@@ -45,14 +41,10 @@ namespace Positron.Inject.Core
             
             foreach (var binding in module.GetAllBindings())
             {
-<<<<<<< HEAD
-                types.Add(binding.Target, resolveTypeNode(binding.Target, module, types));
-=======
                 if (!types.ContainsKey(binding.Target))
                 {
                     resolveTypeNode(binding.Target, module, types);
                 }
->>>>>>> 2768a82 (basic graph resolution of dependencies through constructors)
             }
 
             return new DependencyGraph(types);
